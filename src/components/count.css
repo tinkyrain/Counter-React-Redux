@@ -11,11 +11,3 @@
 .count__value{
     font-size: 60px;
 }
-
-.section__button{
-    width: 100%;
-    height: auto;
-
-    display: flex;
-    justify-content: center;
-}

@@ -1,13 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import App from './App';
 import './global.css'
+
+const defaultState = {
+  count: 0,
+}
+
+const reducer = (state = defaultState, action) => {
+
+  switch(action.type){
+    case "PLUS_COUNT":
+      return {...state, count: state.count+1};
+      break;
+
+    case "MINUS_COUNT":
+      return {...state, count: state.count-1};
+      break;  
+      
+    case "ZERO_COUNT":
+      return {...state, count: 0};
+      break;
+
+    default:
+      return state;
+  }
+
+}
+
+const store = createStore(reducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <React.StrictMode>
-      <App />
+      <Provider store={store}>
+        <App/>
+      </Provider>
     </React.StrictMode>
 );
 
