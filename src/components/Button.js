@@ -1,10 +1,10 @@
 import React from "react";
 import './button.css'
 
-const Button = ({ text, background, textColor, borderColor }) => {
+const Button = ({ text='text', background, textColor, border='3px solid black', click}) => {
 
     let btnStyle = {
-        border: `${borderColor}`,
+        border: `${border}`,
         background: `${background}`,
         color: `${textColor}`
     }
@@ -13,8 +13,9 @@ const Button = ({ text, background, textColor, borderColor }) => {
         <input 
             type='button' 
             value={text} 
-            class='button' 
+            className='button' 
             style={btnStyle}
+            onClick={click}
         />
     );
 }
