@@ -1,7 +1,7 @@
 import React from "react";
 import './button.css'
 
-const Button = ({ text='text', background, textColor, border='3px solid black' }) => {
+const Button = ({ text='text', background, textColor, border='3px solid black', click}) => {
 
     let btnStyle = {
         border: `${border}`,
@@ -15,6 +15,7 @@ const Button = ({ text='text', background, textColor, border='3px solid black' }
             value={text} 
             className='button' 
             style={btnStyle}
+            onClick={click}
         />
     );
 }

@@ -15,16 +15,13 @@ const reducer = (state = defaultState, action) => {
 
   switch(action.type){
     case "PLUS_COUNT":
-      return {...state, count: state.count+1};
-      break;
+      return {...state, count: state.count + action.countChange};
 
     case "MINUS_COUNT":
-      return {...state, count: state.count-1};
-      break;  
+      return {...state, count: state.count - action.countChange};
       
     case "ZERO_COUNT":
       return {...state, count: 0};
-      break;
 
     default:
       return state;
